@@ -1,9 +1,19 @@
 import axios from 'axios'
 
-export let fetchCoins = (coins) => {
-  const baseURL = 'https://www.cryptocompare.com/api/data/coinlist'
-  // return (dispatch) => {
-    axios.get(`${baseURL}`)
-    .then( res => console.log(res.data) )
-  // }
+/*------------------------------------------------------*/
+export const fetchCoins = ()  => {
+  return (dispatch, getState) => {
+  const baseURL = 'https://api.coinmarketcap.com/v1/ticker/?limit=10'
+    return axios.get(baseURL) 
+    .then( coins => dispatch(loadSuccessCoins(coins)) )
+    .catch( err => console.log( 'error: ' + err ))
+  }
+} 
+
+/*------------------------------------------------------*/
+export function loadSuccessCoins(coins) {
+  return {
+    type: "FETCH_COINS", 
+    coins
+  }
 }

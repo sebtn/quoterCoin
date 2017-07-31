@@ -2,15 +2,20 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
-import QuoteTable from './QuoteTable'
+import Quote from './Quote'
+import FetchButton from './FetchButton'
 
 class Main extends Component {
   render() {
     return(
-      <div>
-        <h3>I'm Main rewired!</h3>
-        {this.props.children}
-        <QuoteTable />
+      <div className="container-fluid">
+        <div className="col-lg-4"></div>
+        <div className="col-lg-4">          
+          <FetchButton />
+          <Quote />
+          {this.props.children}
+        </div>
+        <div className="col-lg-4"></div>
       </div>
     )
   }
