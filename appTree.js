@@ -4,8 +4,11 @@
 │   │   └── index.js
 │   ├── app.js
 │   ├── components
-│   │   └── Main.js
+│   │   ├── FetchButton.js
+│   │   ├── Main.js
+│   │   └── Quote.js
 │   ├── reducers
+│   │   ├── coinReducer.js
 │   │   └── index.js
 │   ├── router
 │   │   └── index.js
@@ -13,9 +16,11 @@
 │   │   └── configureStore.js
 │   ├── styles
 │   │   ├── app.scss
-│   │   └── base
-│   │       ├── _core.scss
-│   │       └── _variables.scss
+│   │   ├── base
+│   │   │   ├── _core.scss
+│   │   │   └── _variables.scss
+│   │   └── components
+│   │       └── QuoteTable.scss
 │   └── tests
 │       └── components
 │           └── test_index.js
@@ -29,4 +34,4 @@
 ├── server.js
 └── webpack.config.js
 
-11 directories, 18 files
+12 directories, 22 files
