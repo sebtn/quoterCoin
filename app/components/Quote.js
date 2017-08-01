@@ -6,19 +6,25 @@ import {simpleFetch} from '../actions/index'
 
 class Quote extends Component {
 
+  getColor = (num) => {
+    return num > 0 ? 'positive' : 'negative'
+  }
 /*--------------------------------------------------*/
 /*Double return because react cannot print objects*/
   renderCoins = () => {
-    let {coins} = this.props
+    let {coins, getColor} = this.props
     return coins.map(coin => {
       return <tr key={coin.rank}> 
         <td> {coin.rank} </td>
         <td> {coin.name} </td>
         <td> {coin.symbol} </td>
         <td> $ {coin.price_usd} </td>
-        <td> {coin.percent_change_1h} </td>
-        <td> {coin.percent_change_24h} </td>
-        <td> {coin.percent_change_7d} </td>
+        <td className={this.getColor(coin.percent_change_1h)}>
+        {coin.percent_change_1h} </td>
+        <td className={this.getColor(coin.percent_change_24h)}> 
+        {coin.percent_change_24h} </td>
+        <td className={this.getColor(coin.percent_change_7d)}> 
+        {coin.percent_change_7d} </td>
         <td> $ {coin.market_cap_usd} </td>
       </tr> 
     })
