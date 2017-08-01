@@ -7,6 +7,7 @@ import {simpleFetch} from '../actions/index'
 class Quote extends Component {
 
 /*--------------------------------------------------*/
+/*Double return because react cannot print objects*/
   renderCoins = () => {
     let {coins} = this.props
     return coins.map(coin => {
@@ -14,11 +15,11 @@ class Quote extends Component {
         <td> {coin.rank} </td>
         <td> {coin.name} </td>
         <td> {coin.symbol} </td>
-        <td> {coin.price_usd} </td>
+        <td> $ {coin.price_usd} </td>
         <td> {coin.percent_change_1h} </td>
         <td> {coin.percent_change_24h} </td>
         <td> {coin.percent_change_7d} </td>
-        <td> {coin.market_cap_usd} </td>
+        <td> $ {coin.market_cap_usd} </td>
       </tr> 
     })
   }
@@ -26,7 +27,6 @@ class Quote extends Component {
 /*--------------------------------------------------*/
   render() {
     return(
-
       <table className="table table-hover">
         <thead>
           <tr>

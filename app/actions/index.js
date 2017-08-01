@@ -3,13 +3,12 @@ import axios from 'axios'
 /*------------------------------------------------------*/
 export const fetchCoins = ()  => {
   return (dispatch, getState) => {
-  const baseURL = 'https://api.coinmarketcap.com/v1/ticker/?limit=10'
+  const baseURL = 'https://api.coinmarketcap.com/v1/ticker/?limit=15'
     return axios.get(baseURL)   
     .then( (coins) => {
-      // Object.keys(coins.data).map((e) => console.log(`key=${e}  value=${coins.data[e]}`))
       let keys = Object.keys(coins.data)
       let values = keys.map((x) =>  coins.data[x] )
-      console.log('val', values)
+      // console.log('val', values)
       dispatch(loadSuccessCoins(values))
     })
   }

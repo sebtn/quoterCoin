@@ -17,7 +17,7 @@ class ButtonFetch extends Component {
   render() {
     return(
       <div>
-        <button 
+        <button className="btn btn-primary btn-lg fetch-btn"
           onClick = {  this.handleClick }>
           Fetch Coins
         </button>

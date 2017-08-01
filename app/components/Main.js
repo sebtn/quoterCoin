@@ -8,10 +8,11 @@ import FetchButton from './FetchButton'
 class Main extends Component {
   render() {
     return(
-      <div className="container-fluid">
-          <FetchButton />
-          <Quote />
-          {this.props.children}
+      <div className="container">
+        <h1>Live Crypto Currencies Quotes</h1>
+        <FetchButton />
+        <Quote />
+        {this.props.children}
       </div>
     )
   }
