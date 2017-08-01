@@ -3,24 +3,35 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
 class Quote extends Component {
-  renderCoinList = () => {
-    let {coinList} = this.props.coins
-    console.log(coinList)
+
+/*--------------------------------------------------*/
+  renderCoins = (coin, index) => {
+    return (
+      <li key={coin[index].id}>
+        <p>{coin[index].symbol}</p> 
+        <p>{coin[index].name}</p> 
+        <p>{coin[index].rank}</p> 
+      </li>
+    )
   }
 
+/*--------------------------------------------------*/
   render() {
+    let {coins} = this.props
     return(
-      <div className="table-container">
-        {this.renderCoinList}
-      </div>
+      <ul className="coin-container">
+        { coins.map(this.renderCoins) }
+      </ul>
     )
   }
 }
 
+/*--------------------------------------------------*/
 let mapStateToProps = (state) => {
-
-  return { coins: state.coins, 
-    console: console.log(state) }
+/*Coin key is also found inside rootReducer, since coins 
+is part of app main state this.props.coins is available 
+inside component*/
+  return { coins: state.coins }
 }
 
 export default connect(mapStateToProps)(Quote)

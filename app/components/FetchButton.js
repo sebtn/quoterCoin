@@ -16,7 +16,7 @@ class ButtonFetch extends Component {
     return(
       <div>
         <button 
-          onClick = { () => this.handleClick() }>
+          onClick = {  this.handleClick }>
           Fetch Coins
         </button>
       </div>
