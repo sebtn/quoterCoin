@@ -20,11 +20,11 @@ class Quote extends Component {
         <td> {coin.symbol} </td>
         <td> $ {coin.price_usd} </td>
         <td className={this.getColor(coin.percent_change_1h)}>
-        {coin.percent_change_1h} </td>
+        <b>{coin.percent_change_1h}</b> </td>
         <td className={this.getColor(coin.percent_change_24h)}> 
-        {coin.percent_change_24h} </td>
+        <b>{coin.percent_change_24h}</b> </td>
         <td className={this.getColor(coin.percent_change_7d)}> 
-        {coin.percent_change_7d} </td>
+        <b>{coin.percent_change_7d}</b> </td>
         <td> $ {coin.market_cap_usd} </td>
       </tr> 
     })
