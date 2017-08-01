@@ -9,13 +9,9 @@ class Main extends Component {
   render() {
     return(
       <div className="container-fluid">
-        <div className="col-lg-4"></div>
-        <div className="col-lg-4">          
           <FetchButton />
           <Quote />
           {this.props.children}
-        </div>
-        <div className="col-lg-4"></div>
       </div>
     )
   }
